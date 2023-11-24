@@ -47,6 +47,23 @@
                     <p class="lead fw-normal text-white-50 mb-0">With this shop hompeage template</p>
                 </div>
             </div>
+            <div class="srch">
+                <div class="container">
+                
+                    <div class="row">
+                
+                      <div class="col-md-2"></div>
+                      <div class="col-md-8">
+                        <div class="form">
+                            <i class="fa fa-search"></i>
+                            <input type="text" class="form-control form-input" placeholder="Search Your Product...">
+                
+                          </div>
+                      </div>
+                      <div class="col-md-2"></div>
+                    </div>  
+                  </div>
+            </div>
         </header>
                 <!-- Section-->
     <section class="py-5">
@@ -75,21 +92,30 @@
     for(pro of data.carts){ 
         for(k of pro.products){
         output= `<div class="col mb-5">
-                        <div class="card h-100">
+                        <div class="card h-100" style="background-color: whitesmoke;">
                             <!-- Product image-->
                             <img class="card-img-top" height="200px" src=${k.thumbnail} alt="..." />
                             <!-- Product details-->
-                            <div class="card-body p-4">
+                            <div class="card-body p-2">
                                 <div class="text-center">
                                     <!-- Product name-->
-                                    <h5 class="fw-bolder">${k.title.slice(0,25)}....</h5>
+                                    <h5 class="fw-bolder">${k.title}...</h5>
                                     <!-- Product price-->
-                                    price : $ ${k.price} <div class="text-success"> Discount : ${k.discountPercentage}%
-                                </div></div>
+                                  <div class="p-3 fw-bold">
+                                        Price : $ ${k.price} <br>
+                                        Qty : ${k.quantity} <br>
+                                       <span class="text-decoration-line-through text-primary-emphasis"> Total price : $${k.total}</span> <br>
+                                        Discount Price :<span class="text-success"> $${k.discountedPrice}</span>
+    
+                                  </div>
+                                    <div class=" text-danger fs-2 fw-bold">${k.discountPercentage}% Discount
+                                        </div>
+                                    </div>
                             </div>
                             <!-- Product actions-->
                             <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                <div class="text-center"><a class="btn btn-danger mt-auto" href="#">Buy Now</a></div>
+                                <div class="text-center p-3"><a class="btn btn-primary mt-auto" href="#">Add Cart</a>
+                                   </div>
                             </div>
                         </div>
                     </div>`
